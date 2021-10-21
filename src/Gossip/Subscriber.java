@@ -1,6 +1,6 @@
 package Gossip;
 
-public class Subscriber implements Human{
+public class Subscriber implements Human {
     String name;
     Gossip gossip;
     Type type;
@@ -10,23 +10,24 @@ public class Subscriber implements Human{
         this.type = type;
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
     public Type getType() {
         return type;
     }
 
     public boolean isTheGossipInteresting(Gossip gossip) {
-
-        if (this.type.equals(gossip.getType())) {
-            return true;
-        }
-        return false;
+        return this.type.equals(gossip.getType());
     }
 
-    public void readGossip (Gossip gossip) {
+    public void readGossip(Gossip gossip) {
         this.gossip = gossip;
     }
 
-    public void doesHeKnowGossip(){
-        System.out.println(this.name + " услышал " + this.gossip.getText());
+    public Gossip doesHeKnowGossip() {
+        return this.gossip;
     }
 }

@@ -16,4 +16,11 @@ public class Gossip {
     public Type getType() {
         return type;
     }
+
+    @Override
+    public String toString() {
+        return "Gossip{" +
+                "text='" + text + '\'' +
+                '}';
+    }
 }
